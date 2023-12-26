@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F35197832B39658C0054541A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35197822B39658C0054541A /* GoogleService-Info.plist */; };
+		F35197862B3966A50054541A /* SwiftPM in Frameworks */ = {isa = PBXBuildFile; productRef = F35197852B3966A50054541A /* SwiftPM */; };
+		F35197892B39678C0054541A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F35197882B39678C0054541A /* FirebaseAnalytics */; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
 		F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA1C12B3577E800588B6F /* Assets.xcassets */; };
@@ -14,6 +17,11 @@
 		F3BCA1CF2B3577E800588B6F /* LibraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1CE2B3577E800588B6F /* LibraTests.swift */; };
 		F3BCA1D92B3577E800588B6F /* LibraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1D82B3577E800588B6F /* LibraUITests.swift */; };
 		F3BCA1DB2B3577E800588B6F /* LibraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1DA2B3577E800588B6F /* LibraUITestsLaunchTests.swift */; };
+		F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1E72B357B8700588B6F /* BookListView.swift */; };
+		F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1EA2B36DFC600588B6F /* BooksInfo.swift */; };
+		F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3BCA1ED2B36E22A00588B6F /* Alamofire */; };
+		F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3BCA1F12B36E26E00588B6F /* SwiftyJSON */; };
+		F3BCA1F52B3941BF00588B6F /* WideScrollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1F42B3941BF00588B6F /* WideScrollVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F35197822B39658C0054541A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
 		F3BCA1BF2B3577E700588B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +53,10 @@
 		F3BCA1D42B3577E800588B6F /* LibraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1D82B3577E800588B6F /* LibraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraUITests.swift; sourceTree = "<group>"; };
 		F3BCA1DA2B3577E800588B6F /* LibraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3BCA1E72B357B8700588B6F /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
+		F3BCA1EA2B36DFC600588B6F /* BooksInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksInfo.swift; sourceTree = "<group>"; };
+		F3BCA1F32B3937B300588B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F3BCA1F42B3941BF00588B6F /* WideScrollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideScrollVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35197862B3966A50054541A /* SwiftPM in Frameworks */,
+				F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */,
+				F35197892B39678C0054541A /* FirebaseAnalytics in Frameworks */,
+				F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +95,7 @@
 				F3BCA1CD2B3577E800588B6F /* LibraTests */,
 				F3BCA1D72B3577E800588B6F /* LibraUITests */,
 				F3BCA1BB2B3577E700588B6F /* Products */,
+				F3BCA1EF2B36E25B00588B6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +112,12 @@
 		F3BCA1BC2B3577E700588B6F /* Libra */ = {
 			isa = PBXGroup;
 			children = (
+				F35197822B39658C0054541A /* GoogleService-Info.plist */,
+				F3BCA1F32B3937B300588B6F /* Info.plist */,
+				F3BCA1E92B36DFA300588B6F /* Models */,
 				F3BCA1BD2B3577E700588B6F /* LibraApp.swift */,
+				F3BCA1F42B3941BF00588B6F /* WideScrollVIew.swift */,
+				F3BCA1E72B357B8700588B6F /* BookListView.swift */,
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
@@ -127,6 +150,21 @@
 			path = LibraUITests;
 			sourceTree = "<group>";
 		};
+		F3BCA1E92B36DFA300588B6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3BCA1EA2B36DFC600588B6F /* BooksInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3BCA1EF2B36E25B00588B6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +181,12 @@
 			dependencies = (
 			);
 			name = Libra;
+			packageProductDependencies = (
+				F3BCA1ED2B36E22A00588B6F /* Alamofire */,
+				F3BCA1F12B36E26E00588B6F /* SwiftyJSON */,
+				F35197852B3966A50054541A /* SwiftPM */,
+				F35197882B39678C0054541A /* FirebaseAnalytics */,
+			);
 			productName = Libra;
 			productReference = F3BCA1BA2B3577E700588B6F /* Libra.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +259,12 @@
 				Base,
 			);
 			mainGroup = F3BCA1B12B3577E600588B6F;
+			packageReferences = (
+				F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */,
+				F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F3BCA1BB2B3577E700588B6F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +283,7 @@
 			files = (
 				F3BCA1C52B3577E800588B6F /* Preview Assets.xcassets in Resources */,
 				F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */,
+				F35197832B39658C0054541A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */,
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
+				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,
+				F3BCA1F52B3941BF00588B6F /* WideScrollVIew.swift in Sources */,
 				F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +474,8 @@
 				DEVELOPMENT_TEAM = J37PZZ77T2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Libra/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +505,8 @@
 				DEVELOPMENT_TEAM = J37PZZ77T2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Libra/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +641,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-package-manager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+		F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F35197852B3966A50054541A /* SwiftPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */;
+			productName = SwiftPM;
+		};
+		F35197882B39678C0054541A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F3BCA1ED2B36E22A00588B6F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F3BCA1F12B36E26E00588B6F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3BCA1B22B3577E600588B6F /* Project object */;
 }

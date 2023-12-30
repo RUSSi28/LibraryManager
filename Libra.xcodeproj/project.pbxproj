@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F35197832B39658C0054541A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35197822B39658C0054541A /* GoogleService-Info.plist */; };
-		F35197862B3966A50054541A /* SwiftPM in Frameworks */ = {isa = PBXBuildFile; productRef = F35197852B3966A50054541A /* SwiftPM */; };
-		F35197892B39678C0054541A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F35197882B39678C0054541A /* FirebaseAnalytics */; };
+		094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094987B62B3FBBB0005967BA /* BookDetailView.swift */; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
 		F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA1C12B3577E800588B6F /* Assets.xcassets */; };
@@ -42,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F35197822B39658C0054541A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
 		F3BCA1BF2B3577E700588B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,9 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35197862B3966A50054541A /* SwiftPM in Frameworks */,
 				F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */,
-				F35197892B39678C0054541A /* FirebaseAnalytics in Frameworks */,
 				F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,7 +108,6 @@
 		F3BCA1BC2B3577E700588B6F /* Libra */ = {
 			isa = PBXGroup;
 			children = (
-				F35197822B39658C0054541A /* GoogleService-Info.plist */,
 				F3BCA1F32B3937B300588B6F /* Info.plist */,
 				F3BCA1E92B36DFA300588B6F /* Models */,
 				F3BCA1BD2B3577E700588B6F /* LibraApp.swift */,
@@ -121,6 +116,7 @@
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
+				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
 			);
 			path = Libra;
 			sourceTree = "<group>";
@@ -184,8 +180,6 @@
 			packageProductDependencies = (
 				F3BCA1ED2B36E22A00588B6F /* Alamofire */,
 				F3BCA1F12B36E26E00588B6F /* SwiftyJSON */,
-				F35197852B3966A50054541A /* SwiftPM */,
-				F35197882B39678C0054541A /* FirebaseAnalytics */,
 			);
 			productName = Libra;
 			productReference = F3BCA1BA2B3577E700588B6F /* Libra.app */;
@@ -262,8 +256,6 @@
 			packageReferences = (
 				F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */,
-				F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F3BCA1BB2B3577E700588B6F /* Products */;
 			projectDirPath = "";
@@ -283,7 +275,6 @@
 			files = (
 				F3BCA1C52B3577E800588B6F /* Preview Assets.xcassets in Resources */,
 				F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */,
-				F35197832B39658C0054541A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +303,7 @@
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
 				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,
 				F3BCA1F52B3941BF00588B6F /* WideScrollVIew.swift in Sources */,
+				094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */,
 				F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +473,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,6 +505,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,22 +637,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-package-manager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.0;
-			};
-		};
-		F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -678,16 +656,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F35197852B3966A50054541A /* SwiftPM */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F35197842B3966A50054541A /* XCRemoteSwiftPackageReference "swift-package-manager" */;
-			productName = SwiftPM;
-		};
-		F35197882B39678C0054541A /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F35197872B39678C0054541A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		F3BCA1ED2B36E22A00588B6F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094987B62B3FBBB0005967BA /* BookDetailView.swift */; };
+		095265D62B4067F6006B101C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095265D52B4067F6006B101C /* GoogleService-Info.plist */; };
+		095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265D82B406944006B101C /* FirebaseAnalyticsSwift */; };
+		095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265DA2B406944006B101C /* FirebaseFirestoreSwift */; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
 		F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA1C12B3577E800588B6F /* Assets.xcassets */; };
@@ -41,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		095265D52B4067F6006B101C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
 		F3BCA1BF2B3577E700588B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,8 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */,
 				F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */,
 				F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */,
+				095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,7 @@
 		F3BCA1BC2B3577E700588B6F /* Libra */ = {
 			isa = PBXGroup;
 			children = (
+				095265D52B4067F6006B101C /* GoogleService-Info.plist */,
 				F3BCA1F32B3937B300588B6F /* Info.plist */,
 				F3BCA1E92B36DFA300588B6F /* Models */,
 				F3BCA1BD2B3577E700588B6F /* LibraApp.swift */,
@@ -180,6 +187,8 @@
 			packageProductDependencies = (
 				F3BCA1ED2B36E22A00588B6F /* Alamofire */,
 				F3BCA1F12B36E26E00588B6F /* SwiftyJSON */,
+				095265D82B406944006B101C /* FirebaseAnalyticsSwift */,
+				095265DA2B406944006B101C /* FirebaseFirestoreSwift */,
 			);
 			productName = Libra;
 			productReference = F3BCA1BA2B3577E700588B6F /* Libra.app */;
@@ -256,6 +265,7 @@
 			packageReferences = (
 				F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F3BCA1BB2B3577E700588B6F /* Products */;
 			projectDirPath = "";
@@ -275,6 +285,7 @@
 			files = (
 				F3BCA1C52B3577E800588B6F /* Preview Assets.xcassets in Resources */,
 				F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */,
+				095265D62B4067F6006B101C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +648,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -656,6 +675,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		095265D82B406944006B101C /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		095265DA2B406944006B101C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		F3BCA1ED2B36E22A00588B6F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */;

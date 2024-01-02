@@ -12,23 +12,14 @@ struct MainScreenView: View {
     
     var body: some View {
         NavigationView{
-            ScrollView(.vertical) {
-                VStack{
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .padding(.leading, 20)
-                        TextField(text: $inputText) {
-                            Text("書籍を検索する")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, 20)
-                        }.frame(height: 24)
+            VStack {
+                ScrollView(.vertical) {
+                    VStack{
+                        BooksSectionView(heading: "団体所有の書籍")
+                        BooksSectionView(heading: "個人所有の書籍")
                     }
-                    
-                    BooksSectionView(heading: "団体所有の書籍")
-                    BooksSectionView(heading: "個人所有の書籍")
                 }
-                
-            }
+            }.navigationTitle("BookSharing").navigationBarTitleDisplayMode(.inline)
         }
     }
 }

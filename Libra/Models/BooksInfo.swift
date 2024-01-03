@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import FirebaseFirestore
 
 class Book: Identifiable {
     var id: String?

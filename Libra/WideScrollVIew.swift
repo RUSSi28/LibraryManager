@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TagKit
 
 struct MainScreenView: View {
     @State var inputText: String = ""
@@ -19,7 +20,9 @@ struct MainScreenView: View {
                         BooksSectionView(heading: "個人所有の書籍")
                     }
                 }
-            }.navigationTitle("BookSharing").navigationBarTitleDisplayMode(.inline)
+            }
+            .navigationTitle("BookSharing")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

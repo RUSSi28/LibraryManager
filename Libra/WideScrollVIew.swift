@@ -69,7 +69,7 @@ struct BooksSectionView: View {
 
 
 struct WideScrollView: View {
-    @State var books:[Book] = []
+    @State var books:[BookInfo] = []
     @Binding var keywords: String
     var body: some View {
         ScrollView(.horizontal) {
@@ -90,7 +90,7 @@ struct WideScrollView: View {
 
 
 struct BookWithTextView: View {
-    let book: Book
+    let book: BookInfo
     
     var body: some View {
         AsyncImage(url: URL(string: book.thumbnailURL!)) { image in

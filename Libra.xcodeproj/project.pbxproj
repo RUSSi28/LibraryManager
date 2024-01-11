@@ -11,7 +11,10 @@
 		095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265D82B406944006B101C /* FirebaseAnalyticsSwift */; };
 		095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265DA2B406944006B101C /* FirebaseFirestoreSwift */; };
 		F307121D2B446E70008975E3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121C2B446E70008975E3 /* Collection.swift */; };
-		F3709FE32B406D6800A0DF5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3709FE22B406D6800A0DF5E /* GoogleService-Info.plist */; };
+		F307121F2B459C42008975E3 /* addBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121E2B459C42008975E3 /* addBookListView.swift */; };
+		F30712252B466B06008975E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F30712242B466B06008975E3 /* GoogleService-Info.plist */; };
+		F3505F002B4F58AF00273696 /* registerBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505EFF2B4F58AF00273696 /* registerBookView.swift */; };
+		F37606332B4EA59200673BF5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F37606322B4EA59200673BF5 /* FirebaseFirestore */; settings = {ATTRIBUTES = (Required, ); }; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
 		F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA1C12B3577E800588B6F /* Assets.xcassets */; };
@@ -46,7 +49,9 @@
 /* Begin PBXFileReference section */
 		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		F307121C2B446E70008975E3 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		F3709FE22B406D6800A0DF5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F307121E2B459C42008975E3 /* addBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookListView.swift; sourceTree = "<group>"; };
+		F30712242B466B06008975E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3505EFF2B4F58AF00273696 /* registerBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerBookView.swift; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
 		F3BCA1BF2B3577E700588B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 				095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */,
 				F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */,
 				F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */,
+				F37606332B4EA59200673BF5 /* FirebaseFirestore in Frameworks */,
 				095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,13 +122,15 @@
 		F3BCA1BC2B3577E700588B6F /* Libra */ = {
 			isa = PBXGroup;
 			children = (
-				F3709FE22B406D6800A0DF5E /* GoogleService-Info.plist */,
+				F30712242B466B06008975E3 /* GoogleService-Info.plist */,
 				F3BCA1F32B3937B300588B6F /* Info.plist */,
 				F3BCA1E92B36DFA300588B6F /* Models */,
 				F3BCA1BD2B3577E700588B6F /* LibraApp.swift */,
 				F3BCA1F42B3941BF00588B6F /* WideScrollVIew.swift */,
+				F307121E2B459C42008975E3 /* addBookListView.swift */,
 				F3BCA1E72B357B8700588B6F /* BookListView.swift */,
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
+				F3505EFF2B4F58AF00273696 /* registerBookView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
 				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
@@ -192,6 +200,7 @@
 				F3BCA1F12B36E26E00588B6F /* SwiftyJSON */,
 				095265D82B406944006B101C /* FirebaseAnalyticsSwift */,
 				095265DA2B406944006B101C /* FirebaseFirestoreSwift */,
+				F37606322B4EA59200673BF5 /* FirebaseFirestore */,
 			);
 			productName = Libra;
 			productReference = F3BCA1BA2B3577E700588B6F /* Libra.app */;
@@ -287,8 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3BCA1C52B3577E800588B6F /* Preview Assets.xcassets in Resources */,
+				F30712252B466B06008975E3 /* GoogleService-Info.plist in Resources */,
 				F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */,
-				F3709FE32B406D6800A0DF5E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +325,10 @@
 				F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */,
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
 				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,
+				F307121F2B459C42008975E3 /* addBookListView.swift in Sources */,
 				F3BCA1F52B3941BF00588B6F /* WideScrollVIew.swift in Sources */,
 				094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */,
+				F3505F002B4F58AF00273696 /* registerBookView.swift in Sources */,
 				F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */,
 				F307121D2B446E70008975E3 /* Collection.swift in Sources */,
 			);
@@ -688,6 +699,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		F37606322B4EA59200673BF5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		F3BCA1ED2B36E22A00588B6F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -16,9 +16,9 @@ struct BookDetailView: View {
         }
     }
 }
-//
-//struct BookDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookDetailView()
-//    }
-//}
+
+struct BookDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        BookDetailView(book: BookInfo())
+    }
+}

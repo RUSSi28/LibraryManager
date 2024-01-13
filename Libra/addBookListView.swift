@@ -14,6 +14,8 @@ struct addBookListView: View {
     @State var title: String = ""
     @ObservedObject private var viewModel = BookViewModel()
     
+    @State var keyword: String = ""
+    
     var body: some View {
         VStack {
             TextField("Title", text: $title) {

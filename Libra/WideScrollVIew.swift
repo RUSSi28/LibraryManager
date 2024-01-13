@@ -41,6 +41,7 @@ struct TagSectionView: View{
 
 struct BooksSectionView: View {
     let heading :String
+    @State var keyword: String = "SwiftUI"
     var body: some View {
         VStack{
             Divider()
@@ -50,14 +51,13 @@ struct BooksSectionView: View {
             Divider()
             WideScrollView(keywords: .constant("SwiftUI"))
             Divider()
-            NavigationLink(destination: BookListView()) {
+            NavigationLink(destination: BookListView(keyword: $keyword)) {
                 Text("もっと見る")
                     .padding(.leading, 20)
             }
                 .frame(maxWidth: .infinity, alignment: .leading)
             Divider()
         }
-        
     }
 }
 

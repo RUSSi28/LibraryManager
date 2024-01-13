@@ -31,7 +31,7 @@ struct Book: Identifiable {
     }
 }
 
-class TextBookViewModel: ObservableObject {
+class BookViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
     @Published var textList: [Book] = []

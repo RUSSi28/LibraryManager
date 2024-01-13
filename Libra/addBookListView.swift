@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 struct addBookListView: View {
     @State var title: String = ""
-//    @ObservedObject private var bookInfo:
+    @ObservedObject private var viewModel = BookViewModel()
     
     var body: some View {
         VStack {

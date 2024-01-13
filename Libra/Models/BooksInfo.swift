@@ -10,9 +10,7 @@ import SwiftyJSON
 import Alamofire
 import FirebaseFirestore
 
-
-
-class BookInfo: Identifiable {
+class Book: Identifiable {
     var id: String?
     var title: String?
     var thumbnailURL: String?
@@ -21,7 +19,7 @@ class BookInfo: Identifiable {
 class GoogleBooksAPI {
     var keyword: String
     
-    public func getAPI(completion: @escaping ([BookInfo]) -> Void) {
+    public func getAPI(completion: @escaping ([Book]) -> Void) {
         AF.request("https://www.googleapis.com/books/v1/volumes?q=\(keyword)&maxResults=20").response { response in
             do {
                 var json = try? JSON(data: response.data!)
@@ -33,11 +31,11 @@ class GoogleBooksAPI {
         }
     }
     
-    private func setVolume(_ json: JSON) -> [BookInfo] {
+    private func setVolume(_ json: JSON) -> [Book] {
         let items = json["items"].array!
-        var books: [BookInfo] = []
+        var books: [Book] = []
         for item in items {
-            let bk = BookInfo()
+            let bk = Book()
             bk.id = item["id"].stringValue
             bk.title = item["volumeInfo"]["title"].stringValue
             bk.thumbnailURL = item["volumeInfo"]["imageLinks"]["thumbnail"].stringValue

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    let book: BookInfo
+    let book: Book
     
     var body: some View {
         VStack{

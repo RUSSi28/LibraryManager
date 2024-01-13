@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookListView: View {
-    @State var books: [Book] = []
+    @State var books: [BookInfo] = []
     
     var body: some View {
                 

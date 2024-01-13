@@ -13,6 +13,7 @@
 		095AFD182B465A6800932C46 /* TagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09B2E3962B42D37D0003E28B /* TagKit */; };
 		095AFD1A2B465B0100932C46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095AFD192B465B0100932C46 /* GoogleService-Info.plist */; };
 		F307121D2B446E70008975E3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121C2B446E70008975E3 /* Collection.swift */; };
+		F34248D72B52396D00B40866 /* addBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34248D62B52396D00B40866 /* addBookListView.swift */; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
 		F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA1C12B3577E800588B6F /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		095AFD192B465B0100932C46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F307121C2B446E70008975E3 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		F34248D62B52396D00B40866 /* addBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookListView.swift; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
 		F3BCA1BF2B3577E700588B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,10 +126,11 @@
 				F3BCA1BD2B3577E700588B6F /* LibraApp.swift */,
 				F3BCA1F42B3941BF00588B6F /* WideScrollVIew.swift */,
 				F3BCA1E72B357B8700588B6F /* BookListView.swift */,
+				F34248D62B52396D00B40866 /* addBookListView.swift */,
+				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
-				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
 			);
 			path = Libra;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */,
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
 				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,
+				F34248D72B52396D00B40866 /* addBookListView.swift in Sources */,
 				F3BCA1F52B3941BF00588B6F /* WideScrollVIew.swift in Sources */,
 				094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */,
 				F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */,

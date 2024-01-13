@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    let book: Book
+    let book: BookInfo
     
     var body: some View {
         VStack{
@@ -16,9 +16,9 @@ struct BookDetailView: View {
         }
     }
 }
-//
-//struct BookDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookDetailView()
-//    }
-//}
+
+struct BookDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        BookDetailView(book: BookInfo())
+    }
+}

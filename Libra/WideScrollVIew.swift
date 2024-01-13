@@ -41,6 +41,7 @@ struct TagSectionView: View{
 
 struct BooksSectionView: View {
     let heading :String
+    @State var keyword: String = "SwiftUI"
     var body: some View {
         VStack{
             Divider()
@@ -50,32 +51,31 @@ struct BooksSectionView: View {
             Divider()
             WideScrollView(keywords: .constant("SwiftUI"))
             Divider()
-            NavigationLink(destination: BookListView()) {
+            NavigationLink(destination: BookListView(keyword: $keyword)) {
                 Text("もっと見る")
                     .padding(.leading, 20)
             }
                 .frame(maxWidth: .infinity, alignment: .leading)
             Divider()
         }
-        
     }
 }
 
 
 struct WideScrollView: View {
-    @State var books:[Book] = []
+    @State var books:[BookInfo] = []
     @Binding var keywords: String
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(books) {item in
-                    NavigationLink(destination: BookDetailView(book: item)) {
+                ForEach(books) { item in
+                    NavigationLink (destination: BookDetailView(book: item)) {
                         BookWithTextView(book: item)
                     }
                 }
             }
         }.onAppear {
-            GoogleBooksAPI(keyword: "SwiftUI").getAPI { result in
+            GoogleBooksAPI(keyword: "SwiftUI").getAPI {result in
                 books = result
             }
         }
@@ -84,7 +84,7 @@ struct WideScrollView: View {
 
 
 struct BookWithTextView: View {
-    let book: Book
+    let book: BookInfo
     
     var body: some View {
         AsyncImage(url: URL(string: book.thumbnailURL!)) { image in

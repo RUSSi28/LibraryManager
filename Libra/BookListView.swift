@@ -14,15 +14,9 @@ struct BookListView: View {
                 
         VStack {
             List(books) {item in
-                HStack {
-                    AsyncImage(url: URL(string: item.thumbnailURL!)) { image in
-                        image.resizable()
-                    } placeholder: {
-                        ProgressView()
-                    }.frame(width: 100, height: 100)
-                    Text(item.title!)
+                NavigationLink(destination: BookDetailView(book: item)) {
+                    BookInformation(book: item)
                 }
-//                Text("\(books.count)")
             }
         }.onAppear {
             GoogleBooksAPI(keyword: "SwiftUI").getAPI { results in
@@ -31,6 +25,21 @@ struct BookListView: View {
         }
     }
 }
+
+struct BookInformation: View {
+    let book : Book
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: book.thumbnailURL!)){ image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }.frame(width: 80, height: 100)
+            Text(book.title!)
+        }
+    }
+}
+
 
 struct BookListView_Previews: PreviewProvider {
     static var previews: some View {

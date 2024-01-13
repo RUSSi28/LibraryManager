@@ -10,6 +10,8 @@
 		094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094987B62B3FBBB0005967BA /* BookDetailView.swift */; };
 		095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265D82B406944006B101C /* FirebaseAnalyticsSwift */; };
 		095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265DA2B406944006B101C /* FirebaseFirestoreSwift */; };
+		095AFD182B465A6800932C46 /* TagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09B2E3962B42D37D0003E28B /* TagKit */; };
+		095AFD1A2B465B0100932C46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095AFD192B465B0100932C46 /* GoogleService-Info.plist */; };
 		F307121D2B446E70008975E3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121C2B446E70008975E3 /* Collection.swift */; };
 		F307121F2B459C42008975E3 /* addBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121E2B459C42008975E3 /* addBookListView.swift */; };
 		F30712252B466B06008975E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F30712242B466B06008975E3 /* GoogleService-Info.plist */; };
@@ -48,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		095AFD192B465B0100932C46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F307121C2B446E70008975E3 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F307121E2B459C42008975E3 /* addBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookListView.swift; sourceTree = "<group>"; };
 		F30712242B466B06008975E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095AFD182B465A6800932C46 /* TagKit in Frameworks */,
 				095265D92B406944006B101C /* FirebaseAnalyticsSwift in Frameworks */,
 				F3BCA1F22B36E26E00588B6F /* SwiftyJSON in Frameworks */,
 				F3BCA1EE2B36E22A00588B6F /* Alamofire in Frameworks */,
@@ -201,6 +205,7 @@
 				095265D82B406944006B101C /* FirebaseAnalyticsSwift */,
 				095265DA2B406944006B101C /* FirebaseFirestoreSwift */,
 				F37606322B4EA59200673BF5 /* FirebaseFirestore */,
+				09B2E3962B42D37D0003E28B /* TagKit */,
 			);
 			productName = Libra;
 			productReference = F3BCA1BA2B3577E700588B6F /* Libra.app */;
@@ -278,6 +283,7 @@
 				F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F3BCA1F02B36E26E00588B6F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				09B2E3952B42D37D0003E28B /* XCRemoteSwiftPackageReference "TagKit" */,
 			);
 			productRefGroup = F3BCA1BB2B3577E700588B6F /* Products */;
 			projectDirPath = "";
@@ -298,6 +304,7 @@
 				F3BCA1C52B3577E800588B6F /* Preview Assets.xcassets in Resources */,
 				F30712252B466B06008975E3 /* GoogleService-Info.plist in Resources */,
 				F3BCA1C22B3577E800588B6F /* Assets.xcassets in Resources */,
+				095AFD1A2B465B0100932C46 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +678,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		09B2E3952B42D37D0003E28B /* XCRemoteSwiftPackageReference "TagKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/TagKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		F3BCA1EC2B36E22A00588B6F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -704,6 +719,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 095265D72B406944006B101C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		09B2E3962B42D37D0003E28B /* TagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09B2E3952B42D37D0003E28B /* XCRemoteSwiftPackageReference "TagKit" */;
+			productName = TagKit;
 		};
 		F3BCA1ED2B36E22A00588B6F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

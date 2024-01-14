@@ -12,7 +12,6 @@ struct BookListView: View {
     @Binding var keyword: String
     
     var body: some View {
-        NavigationView {
             List(books) {item in
                 HStack {
                     NavigationLink(destination: BookDetailView(book: item)) {
@@ -22,12 +21,10 @@ struct BookListView: View {
                             ProgressView()
                         }.frame(width: 100, height: 100)
                         Text(item.title!)
-//                        Text(item.description!)
                     }
                 }
-            }
-        }.onAppear {
-            GoogleBooksAPI(keyword: keyword).getAPI { results in
+            }.onAppear {
+                GoogleBooksAPI(keyword: keyword).getAPI { results in
                 books = results
             }
         }

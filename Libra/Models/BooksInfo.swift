@@ -35,7 +35,6 @@ class GoogleBooksAPI {
     
     private func setVolume(_ json: JSON) -> [BookInfo] {
         if let items = json["items"].array {
-            let items = json["items"].array!
             var books: [BookInfo] = []
             for item in items {
                 let bk = BookInfo()

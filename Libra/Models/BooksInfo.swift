@@ -34,17 +34,20 @@ class GoogleBooksAPI {
     }
     
     private func setVolume(_ json: JSON) -> [BookInfo] {
-        let items = json["items"].array!
-        var books: [BookInfo] = []
-        for item in items {
-            let bk = BookInfo()
-            bk.id = item["id"].stringValue
-            bk.title = item["volumeInfo"]["title"].stringValue
-            bk.thumbnailURL = item["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
-            bk.description = item["volumeInfo"]["description"].stringValue
-            books.append(bk)
+        if let items = json["items"].array {
+            var books: [BookInfo] = []
+            for item in items {
+                let bk = BookInfo()
+                bk.id = item["id"].stringValue
+                bk.title = item["volumeInfo"]["title"].stringValue
+                bk.thumbnailURL = item["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
+                bk.description = item["volumeInfo"]["description"].stringValue
+                books.append(bk)
+            }
+            return books
+        } else {
+            return []
         }
-        return books
     }
     
     init(keyword: String) {

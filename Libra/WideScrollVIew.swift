@@ -12,18 +12,16 @@ struct MainScreenView: View {
     @State var inputText: String = ""
     
     var body: some View {
-        NavigationView{
-            VStack {
-                ScrollView(.vertical) {
-                    VStack{
-                        BooksSectionView(heading: "団体所有の書籍")
-                        BooksSectionView(heading: "個人所有の書籍")
-                    }
+        VStack {
+            ScrollView(.vertical) {
+                VStack{
+                    BooksSectionView(heading: "団体所有の書籍")
+                    BooksSectionView(heading: "個人所有の書籍")
                 }
             }
-            .navigationTitle("BookSharing")
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationTitle("BookSharing")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

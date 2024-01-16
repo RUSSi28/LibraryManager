@@ -6,19 +6,41 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct BookDetailView: View {
-    let book: BookInfo
+    let bookInfo: BookInfo
+    @ObservedObject private var viewModel = BookViewModel()
+    @State private var showingAlert = false
+    @State private var success = false
     
     var body: some View {
         ScrollView(.vertical){
             VStack(){
-                TitleWithBookImageView(book: book)
+                TitleWithBookImageView(book: bookInfo)
                 
                 Spacer(minLength: 16)
                 Divider()
                 
-                FoldableDescriptionView(bookDescription: book.description!)
+                FoldableDescriptionView(bookDescription: bookInfo.description!)
+                Button (action: {
+                    viewModel.saveBookData(book: Book(Owner: "none", bookInfo: bookInfo)) { error in
+                        if let error = error {
+                            print("Error: \(error.localizedDescription)")
+                        } else {
+                            success = true
+                        }
+                    }
+                    self.showingAlert = true
+                }) {
+                    Text("データベースに追加")
+                }.alert(isPresented: $showingAlert) {
+                    if success {
+                        return Alert(title: Text("登録しました"))
+                    } else {
+                        return Alert(title: Text("登録に失敗しました"))
+                    }
+                }
             }.padding(20)
         }
     }
@@ -87,8 +109,8 @@ fileprivate struct SizePreference: PreferenceKey {
 }
 
 
-struct BookDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookDetailView(book: BookInfo())
-    }
-}
+//struct BookDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BookDetailView(book: BookInfo())
+//    }
+//}

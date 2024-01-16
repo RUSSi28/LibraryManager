@@ -67,7 +67,7 @@ struct WideScrollView: View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(books) { item in
-                    NavigationLink (destination: BookDetailView(book: item)) {
+                    NavigationLink (destination: BookDetailView(bookInfo: item)) {
                         BookWithTextView(book: item)
                     }
                 }

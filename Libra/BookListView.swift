@@ -14,7 +14,7 @@ struct BookListView: View {
     var body: some View {
             List(books) {item in
                 HStack {
-                    NavigationLink(destination: BookDetailView(book: item)) {
+                    NavigationLink(destination: BookDetailView(bookInfo: item)) {
                         AsyncImage(url: URL(string: item.thumbnailURL!)) { image in
                             image.resizable()
                         } placeholder: {

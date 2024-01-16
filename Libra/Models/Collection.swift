@@ -7,12 +7,8 @@
 
 import FirebaseFirestore
 
-struct Book: Identifiable {
+struct Book {
 //    GoogleBooksAPIのメンバ
-    let id = UUID()
-//    let title: String
-//    let thumbnailURL: String
-    
     var bookInfo: BookInfo?
     
     var isbooked: Bool = false
@@ -36,28 +32,26 @@ class BookViewModel: ObservableObject {
     
     @Published var textList: [Book] = []
     
-    func saveBookData(textBook: Book, Owner: String ,completion: @escaping (Error?) -> Void) {
+    func saveBookData(book: Book, completion: @escaping (Error?) -> Void) {
         let docRef = db.collection("C0de").document()
         
         docRef.setData([
-            "isbooked": textBook.isbooked,
-            "Owner": textBook.Owner,
-            "Borrower": textBook.Borrower,
-            "tag1": textBook.tag1,
-            "tag2": textBook.tag2,
-            "tag3": textBook.tag3,
-            "tag4": textBook.tag4,
-            "tag5": textBook.tag5
+            "isbooked": book.isbooked,
+            "id": book.bookInfo?.id,
+            "title": book.bookInfo?.title,
+            "thumnailURL": book.bookInfo?.thumbnailURL,
+            "description": book.bookInfo?.description,
+            "Owner": book.Owner,
+            "Borrower": book.Borrower,
+            "tag1": book.tag1,
+            "tag2": book.tag2,
+            "tag3": book.tag3,
+            "tag4": book.tag4,
+            "tag5": book.tag5
         ]) { error in
             completion(error)
         }
     }
-    
-//    func borrowTextBook(Owner: String, Borrower: String, Group: String) {
-//        let docRef = db.collection(Group).document()
-//
-//        let textBook = TextBook(isbooked: true, Owner: Owner, Borrower: Borrower, bookInfo: BookInfo?)
-//    }
     
     func showBooksEveryTag(Tag: String) {
         

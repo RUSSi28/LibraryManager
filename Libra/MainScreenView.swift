@@ -25,21 +25,21 @@ struct MainScreenView: View {
     }
 }
 
-struct TagSectionView: View{
-    @State var tagList: [String] = []
-    
-    var body: some View {
-        ScrollView(.horizontal) {
-            HStack{
-                
-            }
-        }
-    }
-}
+//struct TagSectionView: View{
+//    @State var tagList: [String] = []
+//
+//    var body: some View {
+//        ScrollView(.horizontal) {
+//            HStack{
+//
+//            }
+//        }
+//    }
+//}
 
 struct BooksSectionView: View {
     let heading :String
-    @State var keyword: String = "SwiftUI"
+    @State var keyword: String = "Java"
     var body: some View {
         VStack{
             Divider()
@@ -47,7 +47,7 @@ struct BooksSectionView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
             Divider()
-            WideScrollView(keywords: .constant("SwiftUI"))
+            WideScrollView()
             Divider()
             NavigationLink(destination: BookListView(keyword: $keyword)) {
                 Text("もっと見る")
@@ -61,31 +61,28 @@ struct BooksSectionView: View {
 
 
 struct WideScrollView: View {
-    @State var books:[BookInfo] = []
-    @Binding var keywords: String
+    @ObservedObject var viewModel = BookViewModel()
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(books) { item in
-                    NavigationLink (destination: BookDetailView(bookInfo: item)) {
-                        BookWithTextView(book: item)
+                ForEach(viewModel.bookList) {book in
+                    NavigationLink(destination: BookDetailView(book: book)) {
+                        BookWithTextView(book: book)
                     }
                 }
             }
         }.onAppear {
-            GoogleBooksAPI(keyword: "SwiftUI").getAPI {result in
-                books = result
-            }
+            viewModel.fetchBooks()
         }
     }
 }
 
 
 struct BookWithTextView: View {
-    let book: BookInfo
+    let book: Book
     
     var body: some View {
-        AsyncImage(url: URL(string: book.thumbnailURL!)) { image in
+        AsyncImage(url: URL(string: book.thumbnailURL)) { image in
             image.resizable()
         } placeholder: {
             ProgressView()
@@ -93,7 +90,7 @@ struct BookWithTextView: View {
     }
 }
 
-struct WideScrollView_Previews: PreviewProvider {
+struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
 //        WideScrollView(keywords: .constant("SwiftUI"))
 //        BooksSectionView()

@@ -9,7 +9,9 @@ import SwiftUI
 import FirebaseFirestore
 
 struct BookDetailView: View {
-    let bookInfo: BookInfo
+//    let bookInfo: BookInfo
+    
+    let book: Book
     @ObservedObject private var viewModel = BookViewModel()
     @State private var showingAlert = false
     @State private var success = false
@@ -17,21 +19,21 @@ struct BookDetailView: View {
     var body: some View {
         ScrollView(.vertical){
             VStack(){
-                TitleWithBookImageView(book: bookInfo)
+                TitleWithBookImageView(book: book)
                 
                 Spacer(minLength: 16)
                 Divider()
                 
-                FoldableDescriptionView(bookDescription: bookInfo.description!)
+                FoldableDescriptionView(bookDescription: book.description)
                 Button (action: {
-                    viewModel.saveBookData(book: Book(Owner: "none", bookInfo: bookInfo)) { error in
+                    viewModel.saveBookData(book: Book(isbooked: false, Owner: "myID", id: book.id, title: book.title, thumbnailURL: book.thumbnailURL, description: book.description, isbn13: book.isbn13)) { error in
                         if let error = error {
                             print("Error: \(error.localizedDescription)")
                         } else {
                             success = true
                         }
+                        self.showingAlert = true
                     }
-                    self.showingAlert = true
                 }) {
                     Text("データベースに追加")
                 }.alert(isPresented: $showingAlert) {
@@ -47,14 +49,15 @@ struct BookDetailView: View {
 }
 
 struct TitleWithBookImageView: View {
-    let book: BookInfo
+//    let book: BookInfo
+    let book: Book
     
     var body: some View {
         VStack{
-            Text(book.title!)
+            Text(book.title)
                 .bold()
                 .font(.largeTitle)
-            AsyncImage(url: URL(string: book.thumbnailURL!)) { image in
+            AsyncImage(url: URL(string: book.thumbnailURL)) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()

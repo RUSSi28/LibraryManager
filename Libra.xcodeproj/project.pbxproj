@@ -14,6 +14,8 @@
 		F307121D2B446E70008975E3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121C2B446E70008975E3 /* Collection.swift */; };
 		F33F9B4A2B56BAB700928897 /* MypageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F9B492B56BAB700928897 /* MypageVIew.swift */; };
 		F34248D92B52AFA100B40866 /* searchBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34248D82B52AFA100B40866 /* searchBookView.swift */; };
+		F34734042B898E32008121F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34734032B898E32008121F0 /* HomeView.swift */; };
+		F34734062B89912C008121F0 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34734052B89912C008121F0 /* CustomTabView.swift */; };
 		F36EBD4E2B8717A10085E3EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F36EBD4D2B8717A10085E3EF /* GoogleService-Info.plist */; };
 		F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BD2B3577E700588B6F /* LibraApp.swift */; };
 		F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCA1BF2B3577E700588B6F /* ContentView.swift */; };
@@ -51,6 +53,8 @@
 		F307121C2B446E70008975E3 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F33F9B492B56BAB700928897 /* MypageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVIew.swift; sourceTree = "<group>"; };
 		F34248D82B52AFA100B40866 /* searchBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBookView.swift; sourceTree = "<group>"; };
+		F34734032B898E32008121F0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F34734052B89912C008121F0 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		F36EBD4D2B8717A10085E3EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3BCA1BA2B3577E700588B6F /* Libra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BCA1BD2B3577E700588B6F /* LibraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraApp.swift; sourceTree = "<group>"; };
@@ -130,8 +134,10 @@
 				F3BCA1E72B357B8700588B6F /* BookListView.swift */,
 				F34248D82B52AFA100B40866 /* searchBookView.swift */,
 				F33F9B492B56BAB700928897 /* MypageVIew.swift */,
+				F34734052B89912C008121F0 /* CustomTabView.swift */,
 				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
+				F34734032B898E32008121F0 /* HomeView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
 			);
@@ -326,9 +332,11 @@
 				F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */,
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
 				F33F9B4A2B56BAB700928897 /* MypageVIew.swift in Sources */,
+				F34734042B898E32008121F0 /* HomeView.swift in Sources */,
 				F34248D92B52AFA100B40866 /* searchBookView.swift in Sources */,
 				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,
 				F3BCA1F52B3941BF00588B6F /* MainScreenView.swift in Sources */,
+				F34734062B89912C008121F0 /* CustomTabView.swift in Sources */,
 				094987B72B3FBBB0005967BA /* BookDetailView.swift in Sources */,
 				F3BCA1BE2B3577E700588B6F /* LibraApp.swift in Sources */,
 				F307121D2B446E70008975E3 /* Collection.swift in Sources */,

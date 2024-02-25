@@ -16,6 +16,7 @@ class BookInfo: Identifiable {
     var title: String?
     var thumbnailURL: String?
     var description: String?
+    var isbn13: String?
 }
 
 class GoogleBooksAPI {
@@ -42,6 +43,7 @@ class GoogleBooksAPI {
                 bk.title = item["volumeInfo"]["title"].stringValue
                 bk.thumbnailURL = item["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
                 bk.description = item["volumeInfo"]["description"].stringValue
+                bk.isbn13 = item["volumeInfo"]["industryIdentifiers"][0]["identifier"].stringValue
                 books.append(bk)
             }
             return books

@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct BookListView: View {
-    @State var books: [BookInfo] = []
+    @ObservedObject var viewModel = BookViewModel()
     @Binding var keyword: String
     
     var body: some View {
-            List(books) {item in
+        List(viewModel.bookList) {book in
                 HStack {
-                    NavigationLink(destination: BookDetailView(bookInfo: item)) {
-                        AsyncImage(url: URL(string: item.thumbnailURL!)) { image in
+                    NavigationLink(destination: BookDetailView(book: book)) {
+                        AsyncImage(url: URL(string: book.thumbnailURL)) { image in
                             image.resizable()
                         } placeholder: {
                             ProgressView()
                         }.frame(width: 100, height: 100)
-                        Text(item.title!)
+                        Text(book.title)
                     }
                 }
             }.onAppear {
                 GoogleBooksAPI(keyword: keyword).getAPI { results in
-                books = results
+                    viewModel.translateBookInfoToBook(booksInfo: results)
             }
         }
     }

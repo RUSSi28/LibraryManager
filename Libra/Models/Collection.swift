@@ -93,6 +93,15 @@ class BookViewModel: ObservableObject {
             self.bookList.append(Book(isbooked: false, Owner: "none", id: bookInfo.id!, title: bookInfo.title!, thumbnailURL: bookInfo.thumbnailURL!, description: bookInfo.description!, isbn13: bookInfo.isbn13!))
         }
     }
+    
+    func deleteElement(document: String) async {
+        do {
+            try await db.collection("C0de").document(document).delete()
+            print("Document successfully removed!")
+        } catch {
+            print("Error removing document: \(error)")
+        }
+    }
 
     
 }

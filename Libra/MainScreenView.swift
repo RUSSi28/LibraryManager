@@ -49,12 +49,6 @@ struct BooksSectionView: View {
             Divider()
             WideScrollView()
             Divider()
-            NavigationLink(destination: BookListView(keyword: $keyword)) {
-                Text("もっと見る")
-                    .padding(.leading, 20)
-            }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Divider()
         }
     }
 }
@@ -64,12 +58,19 @@ struct WideScrollView: View {
     @ObservedObject var viewModel = BookViewModel()
     var body: some View {
         ScrollView(.horizontal) {
-            HStack {
-                ForEach(viewModel.bookList) {book in
-                    NavigationLink(destination: BookDetailView(book: book)) {
-                        BookWithTextView(book: book)
+            VStack {
+                HStack {
+                    ForEach(viewModel.bookList) {book in
+                        NavigationLink(destination: BookDetailView(book: book)) {
+                            BookWithTextView(book: book)
+                            Divider()
+                        }
                     }
                 }
+                NavigationLink(destination: BookListView(keyword: "", fetch: false,bookList: viewModel.bookList)) {
+                    Text("もっと見る")
+                        .padding(.leading, 20)
+                }.frame(maxWidth: .infinity, alignment: .leading)
             }
         }.onAppear {
             viewModel.fetchBooks()

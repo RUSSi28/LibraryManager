@@ -9,7 +9,6 @@ import SwiftUI
 
 struct searchBookView: View {
     @State var keyword: String = ""
-    @State var books: [BookInfo] = []
     @State var isPresented: Bool = false
     
     var body: some View {
@@ -21,7 +20,7 @@ struct searchBookView: View {
             }) {
                 Text("Search")
             }.sheet(isPresented: $isPresented) {
-                BookListView(keyword: $keyword)
+                BookListView(keyword: keyword, fetch: false)
             }
         }
     }

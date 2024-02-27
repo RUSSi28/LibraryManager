@@ -9,23 +9,32 @@ import SwiftUI
 
 struct BookListView: View {
     @ObservedObject var viewModel = BookViewModel()
-    @Binding var keyword: String
+    var keyword: String
+    
+    var fetch: Bool
+    var bookList: [Book] = []
     
     var body: some View {
         List(viewModel.bookList) {book in
-                HStack {
-                    NavigationLink(destination: BookDetailView(book: book)) {
-                        AsyncImage(url: URL(string: book.thumbnailURL)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }.frame(width: 100, height: 100)
-                        Text(book.title)
-                    }
+            HStack {
+                NavigationLink(destination: BookDetailView(book: book)) {
+                    AsyncImage(url: URL(string: book.thumbnailURL)) { image in
+                        image.resizable()
+                    } placeholder: {
+                        ProgressView()
+                    }.frame(width: 100, height: 100)
+                    Text(book.title)
                 }
-            }.onAppear {
+            }
+        }.onAppear {
+            if !keyword.isEmpty {
                 GoogleBooksAPI(keyword: keyword).getAPI { results in
                     viewModel.translateBookInfoToBook(booksInfo: results)
+                }
+            } else if fetch == true {
+                viewModel.fetchBooks()
+            } else {
+                viewModel.bookList = bookList
             }
         }
     }
@@ -33,6 +42,7 @@ struct BookListView: View {
 
 struct BookListView_Previews: PreviewProvider {
     static var previews: some View {
-        BookListView(keyword: .constant("SwiftUI"))
+//        BookListView(keyword: "SwiftUI")
+        BookListView(keyword: "Java", fetch: true)
     }
 }

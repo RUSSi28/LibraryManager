@@ -43,6 +43,17 @@ struct Book: Identifiable {
     }
 }
 
+
+extension Book {
+    static let exampleBook: Book = Book(isbooked: false,
+         Owner: "none",
+         id: "uwMG1zg11LEC",
+         title: "Javaセキュリティ",
+         thumbnailURL: "http://books.google.com/books/content?id=uwMG1zg11LEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", description: "本書は、Javaプログラムの観点から、セキュリティについて解説する。セキュリティを提供するJavaの基本的なプラットフォーム機能(クラスローダ、バイトコード検証器、セキュリティマネージャ)のほか、セキュリティモデルの強化のため、Javaに加えられた拡張(電子署名、セキュリティプロバイダ、アクセスコントローラ)を取り上げる。本書の目的は、Javaセキュリティモデルのアーキテクチャと、そのモデルをプログラム的に、またシステム管理的にどのように使用できるかについて理解してもらうことである。",
+         isbn13: "9784873110646")
+}
+
+
 class BookViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
@@ -71,7 +82,7 @@ class BookViewModel: ObservableObject {
     }
     
     func fetchBooks() {
-        let ref = db.collection("C0de").getDocuments { snapshot, error in
+        db.collection("C0de").getDocuments { snapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -92,6 +103,10 @@ class BookViewModel: ObservableObject {
         for bookInfo in booksInfo {
             self.bookList.append(Book(isbooked: false, Owner: "none", id: bookInfo.id!, title: bookInfo.title!, thumbnailURL: bookInfo.thumbnailURL!, description: bookInfo.description!, isbn13: bookInfo.isbn13!))
         }
+    }
+    
+    func makeBookList(books: [Book]) {
+        self.bookList = books
     }
     
     func deleteElement(document: String) async {

@@ -12,12 +12,6 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $tabSelection) {
-//            Text("Tab Content 1").tabItem {
-//                Text("Tab Label1").tag(1)
-//            }
-//            Text("Tab Content 2").tabItem {
-//                Text("Tab Label2").tag(2)
-//            }
             MainScreenView().tag(1)
             searchBookView().tag(2)
             MypageVIew().tag(3)

@@ -15,9 +15,6 @@ struct MypageVIew: View {
             NavigationLink(destination: searchBookView()) {
                 Text("本の追加")
             }
-//            NavigationLink(destination: BookListView(keyword: "")) {
-//                Text("自分の本")
-//            }
         }
     }
 }

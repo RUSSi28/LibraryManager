@@ -20,7 +20,7 @@ struct searchBookView: View {
             }) {
                 Text("Search")
             }.sheet(isPresented: $isPresented) {
-                BookListView(keyword: keyword, fetch: false)
+                BookListView(keyword: keyword, fetch: false, books: [])
             }
         }
     }

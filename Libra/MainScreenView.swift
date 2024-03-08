@@ -67,7 +67,7 @@ struct WideScrollView: View {
                         }
                     }
                 }
-                NavigationLink(destination: BookListView(keyword: "", fetch: false,bookList: viewModel.bookList)) {
+                NavigationLink(destination: BookListView(keyword: "", fetch: false,books: viewModel.bookList)) {
                     Text("もっと見る")
                         .padding(.leading, 20)
                 }.frame(maxWidth: .infinity, alignment: .leading)

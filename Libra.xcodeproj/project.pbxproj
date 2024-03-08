@@ -12,6 +12,7 @@
 		095265DB2B406944006B101C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 095265DA2B406944006B101C /* FirebaseFirestoreSwift */; };
 		095AFD182B465A6800932C46 /* TagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09B2E3962B42D37D0003E28B /* TagKit */; };
 		F307121D2B446E70008975E3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307121C2B446E70008975E3 /* Collection.swift */; };
+		F31AC1942B90D33E00A4138D /* MybookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC1932B90D33E00A4138D /* MybookView.swift */; };
 		F33F9B4A2B56BAB700928897 /* MypageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F9B492B56BAB700928897 /* MypageVIew.swift */; };
 		F34248D92B52AFA100B40866 /* searchBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34248D82B52AFA100B40866 /* searchBookView.swift */; };
 		F34734042B898E32008121F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34734032B898E32008121F0 /* HomeView.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		094987B62B3FBBB0005967BA /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		F307121C2B446E70008975E3 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		F31AC1932B90D33E00A4138D /* MybookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybookView.swift; sourceTree = "<group>"; };
 		F33F9B492B56BAB700928897 /* MypageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVIew.swift; sourceTree = "<group>"; };
 		F34248D82B52AFA100B40866 /* searchBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBookView.swift; sourceTree = "<group>"; };
 		F34734032B898E32008121F0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				F34734052B89912C008121F0 /* CustomTabView.swift */,
 				094987B62B3FBBB0005967BA /* BookDetailView.swift */,
 				F3BCA1BF2B3577E700588B6F /* ContentView.swift */,
+				F31AC1932B90D33E00A4138D /* MybookView.swift */,
 				F34734032B898E32008121F0 /* HomeView.swift */,
 				F3BCA1C12B3577E800588B6F /* Assets.xcassets */,
 				F3BCA1C32B3577E800588B6F /* Preview Content */,
@@ -332,6 +335,7 @@
 				F3BCA1EB2B36DFC600588B6F /* BooksInfo.swift in Sources */,
 				F3BCA1C02B3577E700588B6F /* ContentView.swift in Sources */,
 				F33F9B4A2B56BAB700928897 /* MypageVIew.swift in Sources */,
+				F31AC1942B90D33E00A4138D /* MybookView.swift in Sources */,
 				F34734042B898E32008121F0 /* HomeView.swift in Sources */,
 				F34248D92B52AFA100B40866 /* searchBookView.swift in Sources */,
 				F3BCA1E82B357B8700588B6F /* BookListView.swift in Sources */,

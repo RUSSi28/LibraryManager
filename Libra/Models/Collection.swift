@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseCore
 
 struct Book: Identifiable {
     
@@ -53,12 +54,13 @@ extension Book {
          isbn13: "9784873110646")
 }
 
-
+// データベースとやり取りするオブジェクト
 class BookViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
     @Published var bookList: [Book] = []
     
+    // データの保存
     func saveBookData(book: Book, completion: @escaping (Error?) -> Void) {
         let documentName: String = book.Owner + book.isbn13
         let docRef = db.collection("C0de").document(documentName)
@@ -71,6 +73,7 @@ class BookViewModel: ObservableObject {
             "description": book.description,
             "Owner": book.Owner,
             "Borrower": book.Borrower,
+            "isbn13": book.isbn13,
             "tag1": book.tag1,
             "tag2": book.tag2,
             "tag3": book.tag3,
@@ -81,6 +84,14 @@ class BookViewModel: ObservableObject {
         }
     }
     
+    // 保存されたデータの削除
+    func deleteElement(document: String, completion: @escaping (Error?) -> Void) {
+        db.collection("C0de").document(document).delete() {error in
+            completion(error)
+        }
+    }
+
+    // データベースのC0deコレクションのドキュメントを全て取得
     func fetchBooks() {
         db.collection("C0de").getDocuments { snapshot, error in
             if let error = error {
@@ -99,24 +110,30 @@ class BookViewModel: ObservableObject {
         }
     }
     
+    // 特定のuser所有の本を取得
+    func fetchMyBook(user: String) {
+        db.collection("C0de").whereField("Owner", isEqualTo: user).getDocuments { snapshot, error in
+            if let error = error {
+                print("Error getting owned documents: \(error)")
+            } else {
+                self.bookList = snapshot?.documents.map {
+                    Book(isbooked: $0.data()["isbooked"] as? Bool ?? false,
+                         Owner: $0.data()["Owner"] as? String ?? "",
+                         id: $0.data()["id"] as? String ?? "",
+                         title: $0.data()["title"] as? String ?? "",
+                         thumbnailURL: $0.data()["thumbnailURL"] as? String ?? "",
+                         description: $0.data()["description"] as? String ?? "",
+                         isbn13: $0.data()["isbn13"] as? String ?? "")
+                } ?? []
+            }
+        }
+        
+    }
+    
+    // APIで取得したBookInfoをBook型に変換
     func translateBookInfoToBook(booksInfo: [BookInfo]) {
         for bookInfo in booksInfo {
             self.bookList.append(Book(isbooked: false, Owner: "none", id: bookInfo.id!, title: bookInfo.title!, thumbnailURL: bookInfo.thumbnailURL!, description: bookInfo.description!, isbn13: bookInfo.isbn13!))
         }
     }
-    
-    func makeBookList(books: [Book]) {
-        self.bookList = books
-    }
-    
-    func deleteElement(document: String) async {
-        do {
-            try await db.collection("C0de").document(document).delete()
-            print("Document successfully removed!")
-        } catch {
-            print("Error removing document: \(error)")
-        }
-    }
-
-    
 }

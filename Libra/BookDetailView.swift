@@ -9,9 +9,11 @@ import SwiftUI
 import FirebaseFirestore
 
 struct BookDetailView: View {
-//    let bookInfo: BookInfo
     
     let book: Book
+    var user: String = "none"
+    let save: Bool
+    let delete: Bool
     @ObservedObject private var viewModel = BookViewModel()
     @State private var showingAlert = false
     @State private var success = false
@@ -25,23 +27,31 @@ struct BookDetailView: View {
                 Divider()
                 
                 FoldableDescriptionView(bookDescription: book.description)
-                Button (action: {
-                    viewModel.saveBookData(book: Book(isbooked: false, Owner: "myID", id: book.id, title: book.title, thumbnailURL: book.thumbnailURL, description: book.description, isbn13: book.isbn13)) { error in
-                        if let error = error {
-                            print("Error: \(error.localizedDescription)")
-                        } else {
-                            success = true
+                // データベースに追加
+                if save {
+                    Button (action: {
+                        viewModel.saveBookData(book: Book(isbooked: false, Owner: user, id: book.id, title: book.title, thumbnailURL: book.thumbnailURL, description: book.description, isbn13: book.isbn13)) { error in
+                            if let error = error {
+                                print("Error: \(error.localizedDescription)")
+                            } else {
+                                success = true
+                            }
+                            self.showingAlert = true
                         }
-                        self.showingAlert = true
+                    }) {
+                        Text("データベースに追加")
+                    }.alert(isPresented: $showingAlert) {
+                        if success {
+                            return Alert(title: Text("登録しました"))
+                        } else {
+                            return Alert(title: Text("登録に失敗しました"))
+                        }
                     }
-                }) {
-                    Text("データベースに追加")
-                }.alert(isPresented: $showingAlert) {
-                    if success {
-                        return Alert(title: Text("登録しました"))
-                    } else {
-                        return Alert(title: Text("登録に失敗しました"))
-                    }
+                }
+                
+                // データベースから削除
+                if delete {
+                    DeleteButtonView(document: book.Owner+book.isbn13)
                 }
             }.padding(20)
         }
@@ -49,7 +59,6 @@ struct BookDetailView: View {
 }
 
 struct TitleWithBookImageView: View {
-//    let book: BookInfo
     let book: Book
     
     var body: some View {
@@ -112,8 +121,8 @@ fileprivate struct SizePreference: PreferenceKey {
 }
 
 
-//struct BookDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookDetailView(book: BookInfo())
-//    }
-//}
+struct BookDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        BookDetailView(book: Book.exampleBook, save: true, delete: true)
+    }
+}

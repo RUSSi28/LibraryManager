@@ -14,7 +14,7 @@ struct HomeView: View {
         TabView(selection: $tabSelection) {
             MainScreenView().tag(1)
             searchBookView().tag(2)
-            MypageVIew().tag(3)
+            MypageView().tag(3)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(tabSelection: $tabSelection)

@@ -7,20 +7,24 @@
 
 import SwiftUI
 
-struct MypageVIew: View {
+struct MypageView: View {
     @ObservedObject private var viewModel = BookViewModel()
+    var user: String = "none"
     
     var body: some View {
         List {
             NavigationLink(destination: searchBookView()) {
                 Text("本の追加")
             }
+            NavigationLink(destination: BookListView(keyword: "", fetch: true, user: user, save: false, delete: true)) {
+                Text("自分の本")
+            }
         }
     }
 }
 
-struct MypageVIew_Previews: PreviewProvider {
+struct MypageView_Previews: PreviewProvider {
     static var previews: some View {
-        MypageVIew()
+        MypageView()
     }
 }

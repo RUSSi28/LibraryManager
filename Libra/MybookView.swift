@@ -9,13 +9,10 @@ import SwiftUI
 
 struct MybookView: View {
     @ObservedObject var viewModel = BookViewModel()
+    let user: String = "none"
     
     var body: some View {
-        VStack {
-            BookListView(keyword: "", fetch: false, books: viewModel.bookList)
-        }.onAppear {
-            viewModel.fetchBooks()
-        }
+            BookListView(keyword: "", fetch: false, user: user, save: false, delete: true)
     }
 }
 

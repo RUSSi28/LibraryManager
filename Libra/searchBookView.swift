@@ -15,12 +15,9 @@ struct searchBookView: View {
         VStack {
             TextField("title or keyword", text: $keyword).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
             
-            Button(action: {
-                isPresented = true
-            }) {
+            
+            NavigationLink(destination: BookListView(keyword: keyword, fetch: false, save: true, delete: false)) {
                 Text("Search")
-            }.sheet(isPresented: $isPresented) {
-                BookListView(keyword: keyword, fetch: false)
             }
         }
     }

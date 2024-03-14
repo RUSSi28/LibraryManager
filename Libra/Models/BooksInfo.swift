@@ -24,13 +24,8 @@ class GoogleBooksAPI {
     
     public func getAPI(completion: @escaping ([BookInfo]) -> Void) {
         AF.request("https://www.googleapis.com/books/v1/volumes?q=\(keyword)&maxResults=20").response { response in
-            do {
-                var json = try? JSON(data: response.data!)
-                completion(self.setVolume(json!))
-                
-            } catch {
-                print(error.localizedDescription)
-            }
+            let json = try? JSON(data: response.data!)
+            completion(self.setVolume(json!))
         }
     }
     

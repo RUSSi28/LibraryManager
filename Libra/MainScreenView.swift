@@ -61,13 +61,13 @@ struct WideScrollView: View {
             VStack {
                 HStack {
                     ForEach(viewModel.bookList) {book in
-                        NavigationLink(destination: BookDetailView(book: book)) {
+                        NavigationLink(destination: BookDetailView(book: book, save: false, delete: false)) {
                             BookWithTextView(book: book)
                             Divider()
                         }
                     }
                 }
-                NavigationLink(destination: BookListView(keyword: "", fetch: false,bookList: viewModel.bookList)) {
+                NavigationLink(destination: BookListView(keyword: "", fetch: false, books: viewModel.bookList, save: false, delete: false)) {
                     Text("もっと見る")
                         .padding(.leading, 20)
                 }.frame(maxWidth: .infinity, alignment: .leading)

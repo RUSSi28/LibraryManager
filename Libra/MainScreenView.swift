@@ -10,12 +10,13 @@ import TagKit
 
 struct MainScreenView: View {
     @State var inputText: String = ""
+    let group1: String = "C0de"
     
     var body: some View {
         VStack {
             ScrollView(.vertical) {
                 VStack{
-                    BooksSectionView(heading: "団体所有の書籍")
+                    BooksSectionView(heading: "\(group1)所有の書籍", group: group1)
                     BooksSectionView(heading: "個人所有の書籍")
                 }
             }
@@ -25,21 +26,11 @@ struct MainScreenView: View {
     }
 }
 
-//struct TagSectionView: View{
-//    @State var tagList: [String] = []
-//
-//    var body: some View {
-//        ScrollView(.horizontal) {
-//            HStack{
-//
-//            }
-//        }
-//    }
-//}
 
 struct BooksSectionView: View {
-    let heading :String
-    @State var keyword: String = "Java"
+    let heading : String
+    var group: String = ""
+    
     var body: some View {
         VStack{
             Divider()
@@ -47,7 +38,7 @@ struct BooksSectionView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
             Divider()
-            WideScrollView()
+            WideScrollView(group: group)
             Divider()
         }
     }
@@ -56,6 +47,8 @@ struct BooksSectionView: View {
 
 struct WideScrollView: View {
     @ObservedObject var viewModel = BookViewModel()
+    var group: String = ""
+    
     var body: some View {
         ScrollView(.horizontal) {
             VStack {
@@ -73,7 +66,11 @@ struct WideScrollView: View {
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }
         }.onAppear {
-            viewModel.fetchBooks()
+            if group.isEmpty {
+                viewModel.fetchBooks()
+            } else {
+                viewModel.fetchGroupsBook(group: group)
+            }
         }
     }
 }

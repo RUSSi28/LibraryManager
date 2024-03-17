@@ -127,7 +127,26 @@ class BookViewModel: ObservableObject {
                 } ?? []
             }
         }
-        
+    }
+    
+    
+    // 団体所有の本を取得
+    func fetchGroupsBook(group: String) {
+        db.collection(group).whereField("Owner", isEqualTo: group).getDocuments { snapshot, error in
+            if let error = error {
+                print("Error: \(error)")
+            } else {
+                self.bookList = snapshot?.documents.map {
+                    Book(isbooked: $0.data()["isbooked"] as? Bool ?? false,
+                         Owner: $0.data()["Owner"] as? String ?? "",
+                         id: $0.data()["id"] as? String ?? "",
+                         title: $0.data()["title"] as? String ?? "",
+                         thumbnailURL: $0.data()["thumbnailURL"] as? String ?? "",
+                         description: $0.data()["description"] as? String ?? "",
+                         isbn13: $0.data()["isbn13"] as? String ?? "")
+                } ?? []
+            }
+        }
     }
     
     // APIで取得したBookInfoをBook型に変換
